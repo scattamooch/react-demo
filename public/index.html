@@ -39,5 +39,16 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <script>
+  // removes warning if you don't have React DevTools installed  ;) 
+  ( () => {
+    const info = console.info
+    console.info = function ( message ) {
+      if( !/Download the React DevTools/.test( message ) ) {
+        info.apply( console, arguments ) 
+      }
+    }
+  } )()
+  </script>
   </body>
 </html>
